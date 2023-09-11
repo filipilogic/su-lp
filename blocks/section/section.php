@@ -16,6 +16,11 @@ $content_align = get_field('content_align');
 
 $inner_section_max_width = get_field('inner_section_max_width');
 
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+    $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
+}
+
 $class = 'il_block il_section';
 $sec_in_style = 'style="';
 
@@ -163,7 +168,7 @@ if ( ! empty( $content_align ) ) {
 
 ?>
 
-<div class="<?php echo $class; ?>" <?php if ( $custom_padding ) echo 'style="' . $paddings . '"'; ?>>
+<div <?php echo $anchor; ?> class="<?php echo $class; ?>" <?php if ( $custom_padding ) echo 'style="' . $paddings . '"'; ?>>
 <?php get_template_part('components/background'); ?>
 <div class="<?php echo $sec_in_class ?>" <?php if ( ! empty(get_field('inner_section_spacing_group')) || ! empty($inner_section_max_width) ) { echo $sec_in_style . '"'; } ?>>
 <!-- Inner Section Background -->
