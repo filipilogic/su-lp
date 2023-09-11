@@ -1,0 +1,180 @@
+.il_agenda {
+    padding-top: var(--b-agenda-space-top-ld);
+    padding-bottom: var(--b-agenda-space-bottom-ld);
+    padding-left: var(--b-agenda-space-left-ld);
+    padding-right: var(--b-agenda-space-right-ld);
+    @include tab-max {
+      padding-top: var(--b-agenda-space-top-mt);
+      padding-bottom: var(--b-agenda-space-bottom-mt);
+      padding-left: var(--b-agenda-space-left-mt);
+      padding-right: var(--b-agenda-space-right-mt);
+    }
+    .container {
+        max-width: var(--site-max-width);
+    }
+    .il_tabs_nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            @include mob-only {
+                flex-direction: column;
+            }
+        }
+        li {
+            display: inline-block;
+            max-width: 564px;
+            text-align: center;
+            background: white;
+            border-radius: 36px;
+            box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.16);
+            @include mob-only {
+                margin-bottom: 24px;
+            }
+            @include tab-min {
+                width: 50%;
+            }
+            a {
+                display: block;
+                font-size: 2.4rem;
+                font-weight: 700;
+                color: var(--color-text);
+                text-decoration: none;
+                padding: 15px 0;
+                margin: 0;
+                @include limbo-only {
+                    font-size: 18px;
+                }
+                @include tab-max {
+                    font-size: 15px;
+                }
+                @include mob-only {
+                    font-size: 18px;
+                    padding: 17px 0;
+                }
+            }
+            &.active {
+                a {
+                    color: var(--color-3);
+                }
+            }
+            &:not(:last-child) {
+                margin-right: 3.6rem;
+            }
+        }
+    }
+    .il_tab {
+        transition: var(--theme-transition);
+        padding: 36px;
+        @include limbo-max {
+            padding: 26px;
+        }
+    }
+    .il_tabs_content {
+        background: #fff;
+        border-radius: 36px;
+        box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.16);
+        margin-top: 3rem;
+        .il_tab:not(:first-child) {
+            display: none;
+        }
+        .il_agenda_content {
+            overflow: hidden;
+            display: flex;
+            &:not(:last-child) {
+                margin-bottom: 3.6rem;
+                @include limbo-max {
+                    margin-bottom: 26px;
+                }
+            }
+            * {
+                font-size: 18px;
+                @include limbo-max {
+                    font-size: 16px;
+                }
+            }
+            h4 {
+                margin-bottom: 0;
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--color-1);
+                line-height: 24px;
+                @include mob-only {
+                    font-size: 18px;
+                    padding-top: 15px;
+                }
+            }
+            p {
+                margin: 15px 0 0 0;
+            }
+            strong {
+                display: inline-block;
+                font-size: 2.4rem;
+                color: var(--color-1);
+                margin-right: 8px;
+                @include mob-only {
+                    font-size: 18px;
+                }
+    
+            }
+            ul, ol {
+                margin: 15px 0 0 0;
+                li {
+                    &::marker {
+                        font-size: 14px;
+                    }
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    @include mob-only {
+                        margin-top: 2.5rem;
+                        margin-bottom: 2.5rem;
+                    }
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            p {
+                line-height: 4.55rem;
+            }
+            @include mob-only {
+                flex-direction: column;
+            }
+            .il_ac_time {
+                min-width: 14rem;
+                font-size: 3.6rem;
+                color: var(--color-2);
+                font-weight: 700;
+                line-height: 28px;
+                @include mob-only {
+                    font-size: 22px;
+                    padding-bottom: 0;
+                    border-bottom: 1px solid #dedede;
+                    padding-bottom: 10px;
+                }
+            }
+            .il_ac_content {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+        }
+    }
+    @include mob-only {
+        &.stack_tabs {
+            ul {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                    &.active {
+                        order: 1;
+                    }
+                }
+            }
+        }
+    }
+}

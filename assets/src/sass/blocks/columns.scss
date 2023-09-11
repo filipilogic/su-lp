@@ -1,0 +1,86 @@
+.il_columns {
+  padding-top: var(--b-columns-space-top-ld);
+  padding-bottom: var(--b-columns-space-bottom-ld);
+  padding-left: var(--b-columns-space-left-ld);
+  padding-right: var(--b-columns-space-right-ld);
+  @include tab-max {
+    padding-top: var(--b-columns-space-top-mt);
+    padding-bottom: var(--b-columns-space-bottom-mt);
+    padding-left: var(--b-columns-space-left-mt);
+    padding-right: var(--b-columns-space-right-mt);
+  }
+  .il_block_intro {
+    @include limbo-max {
+      padding-bottom: 5px;
+    }
+  }
+  .il_columns_inner {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    &.align-left {
+        text-align: left;
+    }
+    &.align-center {
+        text-align: center;
+    }
+    &.align-right {
+        text-align: right;
+    }
+    &.text-400 {
+      .il_col_text {
+        font-weight: 400;
+      }
+    }
+    &.text-600 {
+      .il_col_text {
+        font-weight: 600;
+      }
+    }
+    &.text-700 {
+      .il_col_text {
+        font-weight: 700;
+      }
+    }
+    .intro_title {
+      font-size: 2.4rem;
+      margin-bottom: 0;
+      @include limbo-max {
+        font-size: 22px;
+      }
+    }
+    .column {
+      margin-top: 25px;
+      &:has(.intro_title) {
+        .il_col_text {
+          margin-top: 10px;
+        }
+      }
+    }
+    .il_col_text {
+      font-size: 1.8rem;
+      margin-top: 16px;
+      p, a {
+        font-size: 1.8rem;
+        text-decoration: none;
+        @include limbo-max {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.custom-columns-links {
+  .il_columns_inner {
+    justify-content: center;
+  }
+  .column {
+    width: fit-content;
+  }
+  .column:not(:nth-child(3n+3)) {
+    margin-right: 3.5%;
+  }
+}

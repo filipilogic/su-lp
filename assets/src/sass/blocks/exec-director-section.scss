@@ -1,0 +1,15 @@
+.il_section.il_exec-dir-section {
+  @include desk-min {
+    .il_block_intro {
+      flex: 63% 0 0;
+    }
+    .right {
+      flex: 33% 0 0;
+      text-align: center;
+    }
+  }
+
+  .il_section_inner {
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.16);
+  }
+}

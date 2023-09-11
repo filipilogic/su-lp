@@ -1,0 +1,88 @@
+.il_blog-block-section {
+    padding-top: var(--b-blog-block-space-top-ld);
+    padding-bottom: var(--b-blog-block-space-bottom-ld);
+    padding-left: var(--b-blog-block-space-left-ld);
+    padding-right: var(--b-blog-block-space-right-ld);
+    @include tab-max {
+      padding-top: var(--b-blog-block-space-top-mt);
+      padding-bottom: var(--b-blog-block-space-bottom-mt);
+      padding-left: var(--b-blog-block-space-left-mt);
+      padding-right: var(--b-blog-block-space-right-mt);
+    }
+
+    .il_past_events_section_posts{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        @include mob-only{
+            flex-direction: column;
+        }
+        .buttons-after-blog {
+          margin-top: 3.6rem;
+          text-align: center;
+          @include tab-max {
+            margin-top: 36px;
+            width: 100%;
+          }
+        }
+        article {
+            width: 31%;
+            background: #FFFFFF;
+            border-radius: 4px;
+            box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.16);
+            overflow: hidden;
+            @include mob-only {
+                width: 100%;
+            }
+            @include tab-only {
+                width: 47%;
+                &:nth-child(odd) {
+                    margin-right: 6%;
+                }
+            }
+            @include tab-max{
+                &:not(:last-of-type) {
+                    margin-bottom: 5rem;
+                }
+            }
+            @include limbo-min {
+                &:not(:last-of-type) {
+                    margin-right: 3%;
+                }
+            }
+            .article-container {
+                padding: 24px;
+            }
+            a {
+                text-decoration: none;
+                display: block;
+                img{
+                    width:100%;
+                    height: 25rem;
+                    object-fit: cover;
+                    @include tab-max {
+                        height: 35rem;
+                    }
+                }
+                .entry-title{
+                    color: var(--color-1);
+                    margin-bottom: 16px;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                .entry-content{
+                    p {
+                        color: var(--color-text);
+                        font-size: 18px;
+                        margin-bottom: 3rem;
+                    }
+                }
+
+                .entry_btn{
+                    color:var(--color-2);
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

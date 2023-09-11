@@ -1,0 +1,187 @@
+.il-countdown {
+    .container{
+        z-index: 3;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        @include limbo-max{
+            padding: 7.2rem 0;
+            flex-direction: column;
+        }
+        @include desk-min {
+            padding: 5.625rem 3.75rem 5.625rem 11.5rem;
+        }
+    }
+    &-ticker {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        @include limbo-max {
+            width: 60%;
+        }
+        @include mob-only {
+            width: 100%;
+            justify-content: flex-start;
+        }
+        @include desk-min {
+            width: 55%;
+        }
+    }
+    &-item {
+        color:#fff;
+        text-align: center;
+        &:not(:last-child){
+            margin-right: 6rem;
+            @include tab-max{
+                margin-right: 40px;
+            }
+        }
+        h3 {
+            font-size: 8.2rem;
+            font-weight: 700;
+            line-height: 9rem;
+            color: var(--color-2);
+            @include mob-only{
+                font-size: 54px;
+                line-height: 8.4rem;
+            }
+        }
+        p {
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 4.625rem;
+            margin: 0;
+            @include mob-only{
+                font-size: 18px;
+                line-height: 4rem;
+            }
+        }
+
+    }
+    &-links {
+        width: 35%;
+        @include limbo-max{
+            width: 100%;
+        }
+        ul{
+            list-style: none;
+            color:#fff;
+            font-weight: 700;
+            padding-left: 7rem;
+            margin-top: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+            @include sm-desk-max{
+                padding-left: 16%;
+            }
+            @include limbo-max{
+               display: flex;
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: space-around;
+               padding-left: 0;
+               border-left: none;
+               padding-top: 5rem;
+            }
+            @include mob-only {
+                flex-direction: column;
+                padding-top: 6.5rem;
+            }
+            li{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 1.5rem 0;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 3.375rem;
+                @include limbo-max {
+                    font-size: 16px;
+                }
+                @include mob-only {
+                    &:not(:last-child){
+                        padding-bottom: 24px;
+                    }
+                }
+                &:not(:last-child){
+                    @include limbo-max{
+                        margin-right: 3.33rem;
+                    }
+                }
+                
+                cursor: pointer;
+                svg{
+                    margin-right: 1.125rem;
+                }
+                a{
+                    color:#fff;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    line-height: 3.375rem;
+                    font-weight: 600;
+                    @include limbo-max {
+                        font-size: 16px;
+                    }
+                }
+                .add-to-calendar-links{
+                    display:none;
+                }
+                &.il-countdown-add-to-calendar{
+                    .add-to-calendar-wrapper{
+                        position: relative;
+
+                        .add-to-calendar-links{
+                            position: absolute;
+                            top:-3.125rem;
+                            width: 210px;
+                            @include md-desk-min {
+                                width: 270px;
+                            }
+                            padding: 2.5rem 2rem;
+                            background: #fff;
+                            z-index: 99;
+                            background: #FFFFFF;
+                            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                            a{
+                                color:#000;
+                                margin-bottom: 0.5rem;
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                justify-content: flex-start;
+                                align-items: center;
+                                svg{
+                                    margin-right: 2rem;
+                                }
+                                span{
+                                    margin-top: 0.63rem;
+                                    font-weight: 400;
+                                    font-size: 2.25rem;
+                                    line-height: 3.375rem;
+                                }
+                            }
+                            
+                        }
+                        span{
+                            font-size: 2rem;
+                            font-weight: 600;
+                            line-height: 3.375rem;
+                            @include limbo-max {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

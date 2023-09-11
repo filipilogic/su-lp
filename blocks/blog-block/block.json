@@ -1,0 +1,15 @@
+{
+    "name": "acf/blog-block",
+    "title": "iLogic Blog Block",
+    "description": "A Block for displaying last three posts",
+    "category": "ilogic-category",
+    "icon": "welcome-widgets-menus",
+    "keywords": ["blog-block", "blog block", "ilogic"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "blog-block.php"
+    },
+    "supports": {
+		"align": false
+	}
+}

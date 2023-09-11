@@ -1,0 +1,234 @@
+$arrow-space : 25px;
+$cell-height : 160px;
+
+.il_timeline {
+    .il_timeline_inner {
+        @include limbo-only {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .il_tl_item {
+            display: flex;
+            .il_tl_content {
+                .il_tl_body * {
+                    font-size: 18px;
+                    font-weight: 700;
+                    @include md-desk-max {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .il_tl_item .il_tl_arrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include limbo-min {
+            .il_tl_dot_mobile {
+                display: none;
+            }
+            .il_tl_dot {
+                margin-top: 0.25rem;
+            }
+        }
+        @include tab-max {
+            .il_tl_dot {
+                display: none;
+            }
+            .il_tl_dot_mobile {
+                position: relative;
+                left: 2.6rem;
+                top: 30px;
+            }
+        }
+    }
+
+    &.layout-1 { // Layout 1 - Zig Zag
+        .il_timeline_inner {
+            @include limbo-min {
+                .il_tl_item {
+                    &:not(:last-of-type) {
+                        .il_tl_content {
+                            width: 185%;
+                        }
+                    }
+                    &:last-of-type {
+                        .il_tl_content {
+                            width: 110%;
+                        }
+                    }
+                    &:nth-child(odd) {
+                        .il_tl_content {
+                            &::before {
+                                content: "";
+                                position: relative;
+                                height: 39px;
+                                width: 2px;
+                                border-left: 2px dashed var(--color-1);
+                                margin-bottom: 2rem;
+                                margin-top: 1rem;
+                                opacity: .22;
+                            }
+                        }
+                    }
+                    &:nth-child(even) {
+                        .il_tl_content {
+                            order: 1;
+                            justify-content: flex-end;
+                            &::after {
+                                content: "";
+                                position: relative;
+                                height: 39px;
+                                width: 2px;
+                                border-left: 2px dashed var(--color-1);
+                                margin-top: 2rem;
+                                margin-bottom: 1rem;
+                                opacity: .22;
+                            }
+                        }
+                        .il_tl_arrow {
+                            order: 2;
+                        }
+                        .il_tl_empty {
+                            order: 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.layout-2 { // Layout 2 - Zig Zag
+        .il_tl_empty {
+            display: none;
+        }
+        .il_tl_item {
+            .il_tl_content {
+                @include limbo-min {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        height: 39px;
+                        width: 2px;
+                        border-left: 2px dashed var(--color-1);
+                        margin-bottom: 2rem;
+                        margin-top: 1rem;
+                        opacity: .22;
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-1 {  // Style 1 - Light
+        background-color: #fff;
+        .intro_title {
+            color: var(--color-1);
+        }
+        .il_timeline_inner .il_tl_content .il_tl_body * {
+            color: var(--color-1);
+        }
+    }
+    &.style-2 {  // Style 1 - Dark
+        background-color: var(--color-1);
+        .il_timeline_inner .il_tl_content .il_tl_body * {
+            color: #fff;
+        }
+       .il_timeline_inner .il_tl_item  {  // zeljkojemajmun
+        .il_tl_arrow::after {
+            border-color: #fff!important;
+            opacity: .57!important;
+            }
+            .il_tl_content {
+                &::before, &::after {
+                    border-color: #fff!important;
+                    opacity: .57!important;
+                }
+            }
+        }
+    }
+
+    @include limbo-min {
+        .il_timeline_inner {
+            display: flex;
+            padding-left: $arrow-space;
+            padding-top: 6.5rem;
+            .il_tl_item {
+                flex-direction: column;
+                flex-grow: 1;
+                flex-basis: 0;
+                .il_tl_arrow {
+                    height: 50px;
+                    background:linear-gradient(to bottom, transparent 0, transparent 51%, #66a5ad 51%, #66a5ad 55%, transparent 55%, transparent 100%);
+
+                    svg {
+                        margin-left: -$arrow-space;
+                    }
+                }
+                .il_tl_empty {
+                    height: 40%;
+                    height: $cell-height;
+                }
+            }
+            > div {
+                flex-shrink: 0;
+            }
+            .il_tl_content {
+                height: $cell-height;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                padding-right: $arrow-space;
+            }
+        }
+    }
+    @include tab-max {
+        &.style-2 {
+            .il_timeline_inner {
+                &::before {
+                    background-color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+        .il_timeline_inner {
+            position: relative;
+            &:before {
+                content: "";
+                width: 2px;
+                height: 100%;
+                position: absolute;
+                background-color: #041B4F;
+                opacity: .28;
+                left: 3.4rem;
+                top: 20px;
+
+            }
+            .il_tl_item {
+                padding-bottom: 35px;
+                align-items: flex-start;
+                .il_tl_arrow {
+                    display: flex;
+                    align-items: center;
+                    margin-top: -15px;
+                    margin-right: 20px;
+                    svg {
+                        transform: rotate(90deg);
+                        width: 7.2rem;
+                    }
+                    &::after {
+                        content: "";
+                        position: relative;
+                        height: 2px;
+                        width: 55px;
+                        border-bottom: 2px dashed var(--color-1);
+                        margin-top: 0.5rem;
+                        margin-left: -10px;
+                        opacity: .22;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+    }
+}

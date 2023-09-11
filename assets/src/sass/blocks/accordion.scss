@@ -1,0 +1,152 @@
+.il_accordion {
+  .il_accordion_inner {
+    max-width: 1150px;
+  }
+
+  .intro_text {
+    max-width: 75.4rem;
+  }
+  
+  .il_accordion-item {
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.16);;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    @include tab-max {
+      margin-bottom: 25px;
+    }
+    &:not(.open) {
+      .il_accordion-body {
+        display: none;
+      }
+    }
+    .il_accordion-header {
+      font-size: 2rem;
+      @include tab-max {
+        font-size: 16px;
+      }
+      color: var(--color-2);
+      cursor: pointer;
+      padding: 1.25rem 3rem;
+      @include tab-max {
+        padding: 3rem;
+      }
+      position: relative;
+      display: flex;
+      align-items: center;
+      &::after {
+        content: "";
+        background-image: url('../../icons/chevron-down.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        right: 3rem;
+        transition: var(--theme-transition);
+      }
+    }
+    .il_accordion-body {
+      background: #F7F7F7;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include limbo-min {
+        border-radius: 0 0 1rem 1rem;
+      }
+      p {
+        font-size: 2rem;
+        @include tab-max {
+          font-size: 16px;
+        }
+        @include lg-desk-min {
+          font-size: 1.8rem;
+        }
+        &:last-of-type {
+          margin-bottom: 2rem;
+          @include tab-max {
+            margin-bottom: 20px;
+          }
+        }
+      }
+      ul {
+        padding-left: 25px;
+        margin-bottom: 0;
+        li {
+          max-width: 42.8rem;
+          font-size: 2rem;
+          @include tab-max {
+            font-size: 16px;
+          }
+          @include lg-desk-min {
+            font-size: 1.8rem;
+          }
+          &::marker {
+            font-size: 14px;
+          }
+        }
+      }
+      .il_accordion-body-left {
+        padding: 2.5rem;
+        @include tab-max {
+          padding: 4rem 3rem;
+        }
+        @include limbo-min {
+          width: 65%;
+          max-width: 72rem;
+        }
+        .accordion-left-small-heading {
+          margin-bottom: 17px;
+          color: var(--color-1);
+          font-size: 2.2rem;
+          @include tab-max {
+            font-size: 18px;
+          }
+          @include lg-desk-min {
+            font-size: 2rem;
+          }
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .il_accordion-body-right {
+        @include tab-max {
+          height: 30rem;
+        }
+        img {
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+          @include tab-max {
+            width: 100%;
+            height: 100%;
+            border-radius: 0 0 1rem 1rem;
+            &.acc_desk_img {
+              display: none;
+            }
+          }
+          @include limbo-min {
+            border-radius: 0 0 1rem 0;
+            &.acc_mob_img {
+              display: none;
+            }
+          }
+        }
+        @include tab-max {
+          width: 100%;
+        }
+        @include limbo-min {
+          width: 35%;
+          text-align: right;
+        }
+      }
+    }
+    &.open {
+      .il_accordion-header {
+        margin-bottom: 0;
+        &::after {
+          transform: scaleY(-1);
+        }
+      }
+    }
+  }  
+}
