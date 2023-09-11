@@ -294,4 +294,26 @@
       line-height: 1;
     }
   }
+  .il_section_inner {
+    .il_block_bg {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 4.5% 100%, 0 91%);
+      @include tab-max {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 7rem 100%, 0 94%);
+      }
+    }
+    &:after {
+      content: '';
+      background: url('/wp-content/uploads/2023/09/Group-245-2.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      z-index: -1;
+      width: 9.9rem;
+      height: 5.7rem;
+      left: -2rem;
+      right: 0;
+      top: auto;
+      bottom: -1rem;
+    }
+  }
 }
