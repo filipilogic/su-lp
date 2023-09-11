@@ -1369,7 +1369,7 @@ main {
   font-size: var(--body-size);
 }
 .site-main p, .interface-interface-skeleton__content p {
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 @media (max-width: 1199.5px) {
   .site-main p, .interface-interface-skeleton__content p {
@@ -1935,7 +1935,7 @@ main {
   .header-version-1 .header-main-inner #primary-menu a {
     margin-right: 2.5rem;
     color: #fff;
-    font-size: 2.4rem;
+    font-size: 18px;
     font-weight: 700;
   }
   .header-version-1 .header-main-inner .logo-wrap {
@@ -1963,7 +1963,7 @@ main {
     text-transform: uppercase;
     background-color: var(--color-1);
     z-index: 99999;
-    font-size: 2.4rem;
+    font-size: 18px;
     font-weight: 700;
   }
 }
@@ -6512,8 +6512,8 @@ textarea {
 .agenda-section .timeslot {
   display: flex;
   align-items: center;
-  margin-bottom: 4.8rem;
-  font-size: 2.3rem;
+  margin-bottom: 3.4rem;
+  font-size: 2rem;
 }
 @media (max-width: 797.5px) {
   .agenda-section .timeslot {

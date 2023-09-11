@@ -52,7 +52,7 @@ main {
     font-size: var(--body-size);
   }
   p {
-    font-size: 2.3rem;
+    font-size: 2rem;
     @include limbo-max {
       font-size: 16px;
     }
